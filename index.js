@@ -10,7 +10,7 @@ const listingsList = document.createElement('ul');
 
 dataDisplay.appendChild(listingsList);
 
-const listingsArray = [];
+let listingsArray = [];
 
 const render = () => {
   listingsArray.forEach((listing) => {
@@ -18,6 +18,8 @@ const render = () => {
     listingListItem.appendChild(elementify(listing));
     listingsList.appendChild(listingListItem);
   });
+  //reset the listings array so we aren't rendering the old items each time
+  listingsArray = [];
 };
 
 function elementify(obj) {
