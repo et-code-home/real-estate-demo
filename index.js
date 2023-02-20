@@ -4,9 +4,11 @@ const state = document.querySelector('#state');
 const price = document.querySelector('#price');
 const style = document.querySelector('#style');
 const submitButton = document.querySelector('#submitButton');
-const dataDisplay = document.querySelector('#data-display');
 
+const dataDisplay = document.querySelector('#data-display');
 const listingsList = document.createElement('ul');
+
+dataDisplay.appendChild(listingsList);
 
 const listingsArray = [];
 
@@ -27,8 +29,6 @@ function elementify(obj) {
   }
   return list;
 }
-
-dataDisplay.appendChild(listingsList);
 
 submitButton.addEventListener('click', () => {
   const newListing = new Listing(
